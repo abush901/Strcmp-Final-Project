@@ -1,22 +1,15 @@
 #include <cstring>
-
 #include <iostream>
-
 using namespace std;
 
-// Create a main method
-
 int main()
-
 {
-    // Create the two character arrays of length 25
-    char name1[25];
-    char name2[25];
-    // Declare the variables
+    char n1[25];
+    char n2[25];
     char character;
     int result;
     cout << "Please input the first name" << endl;
-    // Create a "for loop" to accept the first name from the user.
+    // Creates a for loop for the first name
     for (int index = 0; index < 25; index++)
     {
         character = getchar();
@@ -26,12 +19,12 @@ int main()
         }
         else
         {
-            name1[index] = character;
-            name1[index + 1] = '\0';
+            n1[index] = character;
+            n1[index + 1] = '\0';
         }
     }
     cout << "Please input the second name" << endl;
-    // Create a "for loop" to accept the second name from the user.  
+    // Creates a for loop for the second name
     for (int index = 0; index < 25; index++)
     {
         character = getchar();
@@ -41,41 +34,34 @@ int main()
         }
         else
         {
-            name2[index] = character;
-            name2[index + 1] = '\0';
+            n2[index] = character;
+            n2[index + 1] = '\0';
         }
     }
-    // Compare two names using "strcmp()" method
-    result = strcmp(name1, name2);
+    // Compare two names 
+    result = strcmp(n1, n2);
 
-    // Create a "switch statement" to check the
-    //result of the two names
+    // Creates a switch statement for the results of the two names
     switch (result)
-    {
-        // Create a "case(1)" block.
-        // This block is executed
-        //if the first name is the greater than the second name
+    { 
+        // switch for the case where name 2 is before name 1
     case (1):
         cout << "The names are as follows:" << endl;
-        cout << name2 << endl;
-        cout << name1 << endl;
+        cout << n2 << endl;
+        cout << n1 << endl;
         break;
-        // Create a "case(0)" block.
-        // This block is executed
-        //if the first name second name are equal
+        // switch for a case where the names are the same
     case (0):
         cout << "The names are as follows:" << endl;
-        cout << name1 << endl;
-        cout << name2 << endl;
+        cout << n1 << endl;
+        cout << n2 << endl;
         cout << "The names are same" << endl;
         break;
-        // Create a "case(-1)" block.
-        // This block is executed
-        //if the first name is the less than the second name
+        // switch for when name 1 is before name 2
     case (-1):
         cout << "The names are as follows:" << endl;
-        cout << name1 << endl;
-        cout << name2 << endl;
+        cout << n1 << endl;
+        cout << n2 << endl;
     }
     return 0;
 }
